@@ -146,3 +146,5 @@ Those are the next production phase after the core deployment and payment flow a
 - The service role key is used only by the verified Paddle webhook.
 - Project rows and storage paths are protected by Supabase RLS.
 - AI findings are research and governance analysis, not legal advice, regulatory certification, or technical assurance.
+
+Production environment baseline applied on 2026-07-22 for `traceremove.dev`.
