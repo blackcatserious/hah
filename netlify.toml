@@ -1,0 +1,11 @@
+[build]
+  base = "traceremove-lab-nextjs-source"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NPM_FLAGS = "--no-audit --no-fund --prefer-offline=false"
+  NETLIFY_NEXT_SKEW_PROTECTION = "true"
+
+[functions]
+  node_bundler = "esbuild"
