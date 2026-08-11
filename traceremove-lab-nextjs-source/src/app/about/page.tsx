@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-export const metadata = { title: "About Artur Ziganshin" };
+export const metadata = {
+  alternates: { canonical: "/about" }, title: "About Artur Ziganshin" };
 
 const positions = [
   ["Narrative identity", "AI systems increasingly participate in the descriptions through which people become socially and institutionally legible."],
