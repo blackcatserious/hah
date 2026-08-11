@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { Publication } from "@/lib/research-data";
 
@@ -48,6 +49,7 @@ export function PublicationArchive({ items }: { items: Publication[] }) {
               <div className="keyword-row">{item.keywords.map((keyword) => <span key={keyword}>{keyword}</span>)}</div>
             </div>
             <div className="publication-record-links">
+                    <Link href={"/publications/" + item.slug}>Read record</Link>
               {item.url && <a href={item.url} target="_blank" rel="noreferrer">Public record ↗</a>}
               {item.pdfUrl && <a href={item.pdfUrl} target="_blank" rel="noreferrer">PDF ↗</a>}
               {!item.url && !item.pdfUrl && <span>Archive record</span>}
