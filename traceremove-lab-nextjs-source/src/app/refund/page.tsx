@@ -5,6 +5,7 @@ import { legalEmail, legalEntity, legalUpdated, merchantOfRecord } from "@/lib/l
 
 export const metadata: Metadata = {
   title: "Refund Policy",
+  alternates: { canonical: "/refund" },
   description:
     "Cancellation, statutory withdrawal and refund rules for Traceremove subscriptions and institutional assessment engagements.",
 };
