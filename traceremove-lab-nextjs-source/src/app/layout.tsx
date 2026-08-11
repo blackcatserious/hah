@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     siteName: "Traceremove",
     locale: "en",
   },
-  alternates: { canonical: "/" },
   robots: {
     index: true,
     follow: true,
