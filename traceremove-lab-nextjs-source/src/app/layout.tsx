@@ -15,8 +15,16 @@ export const metadata: Metadata = {
     title: "Traceremove — AI Responsibility Laboratory",
     description: "Identity, knowledge, and responsibility in the age of artificial intelligence.",
     type: "website",
+    url: siteUrl,
+    siteName: "Traceremove",
+    locale: "en",
   },
-  robots: { index: true, follow: true },
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
