@@ -5,6 +5,8 @@ import {
   legalAddress,
   legalEmail,
   legalEntity,
+  legalEstablishment,
+  legalSupervisoryAuthority,
   legalUpdated,
   merchantOfRecord,
 } from "@/lib/legal";
@@ -47,6 +49,7 @@ const clauses: Clause[] = [
     title: "Who is responsible for your data",
     body: [
       legalEntity + " is the controller for personal data processed through traceremove.dev and the Laboratory workspace.",
+      "We are established in " + legalEstablishment + ".",
       "You can reach us about anything in this policy at " + legalEmail + ". " + legalAddress + ".",
     ],
   },
@@ -110,7 +113,7 @@ const clauses: Clause[] = [
       "You can ask for a copy of your personal data, ask us to correct it, ask us to delete it, ask us to restrict processing, object to processing based on legitimate interests, and ask for your data in a portable format.",
       "Where processing rests on consent you can withdraw that consent at any time.",
       "Write to " + legalEmail + " and we will answer within one month. There is no charge for a reasonable request.",
-      "If you are unhappy with our answer you can complain to your national data protection authority.",
+      "If you are unhappy with our answer you can complain to the " + legalSupervisoryAuthority + ", which is our lead supervisory authority, or to the data protection authority of the country where you live.",
     ],
   },
   {
@@ -119,6 +122,14 @@ const clauses: Clause[] = [
       "We set only the cookies needed to keep you signed in and to protect the sign-in flow. They are strictly necessary and cannot be turned off without breaking authentication.",
       "We do not run advertising or cross-site tracking cookies, and we do not sell or share personal data for behavioural advertising.",
       "If we later add product analytics we will name the provider here and ask for consent where the law requires it.",
+    ],
+  },
+  {
+    title: "If you are in the United States",
+    body: [
+      "We operate in the United States as well as the European Union, and we hold everyone to the same standard: we do not sell personal data, we do not share it for cross-context behavioural advertising, and we never use workspace content for advertising of any kind.",
+      "If you live in California, Colorado, Connecticut, Virginia or another state with a comprehensive privacy law, you can ask what we hold about you, request a copy, ask us to correct or delete it, and appeal if we refuse. Write to " + legalEmail + ".",
+      "We do not discriminate against anyone who exercises these rights. Your price and your features stay exactly the same.",
     ],
   },
   {
