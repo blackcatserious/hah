@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { programmes } from "@/lib/research-data";
 
-export const metadata = { title: "Research programme" };
+export const metadata = {
+  alternates: { canonical: "/research" }, title: "Research programme" };
 
 const methods = [
   ["Conceptual analysis", "Clarify what the system claims to know, understand, predict, or decide before evaluating whether those claims are legitimate."],
