@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { PaddleCheckout } from "@/components/billing/paddle-checkout";
 
-export const metadata = { title: "Access" };
+export const metadata = {
+  alternates: { canonical: "/pricing" }, title: "Access" };
 
 const plans = [
   {
