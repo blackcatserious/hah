@@ -5,6 +5,7 @@ import {
   legalAddress,
   legalEmail,
   legalEntity,
+  legalEstablishment,
   legalJurisdiction,
   legalUpdated,
   merchantOfRecord,
@@ -152,14 +153,16 @@ const clauses: Clause[] = [
     title: "Governing law and disputes",
     body: [
       "These terms are governed by the law of " + legalJurisdiction + ", and any dispute will be heard by the courts of that jurisdiction.",
-      "If you are a consumer you keep the protection of the mandatory rules of the country where you live.",
+      "We are established in " + legalEstablishment + ". Where a purchase is made through our United States operation, mandatory United States federal and state consumer law continues to apply to that purchase.",
+      "Wherever you are, you keep the protection of the mandatory consumer rules of the country and, in the United States, the state where you live. Nothing in these terms takes those rights away.",
       "Please write to us first. Most issues are resolved by email within a few days.",
     ],
   },
   {
     title: "Contact",
     body: [
-      legalEntity + ". " + legalAddress + ".",
+      legalEntity + ", established in " + legalEstablishment + ".",
+      legalAddress + ".",
       "Email " + legalEmail + ".",
     ],
   },
