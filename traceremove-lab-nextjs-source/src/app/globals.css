@@ -757,3 +757,12 @@ td a { color: var(--text); text-decoration: none; }
   .version-rail a + a, .version-rail a:nth-child(3), .version-rail a:nth-child(4) { border-left: 0; border-top: 1px solid var(--line); }
   .result-finding { grid-template-columns: 1fr; }
 }
+
+/* Legal pages: readable measure and spacing between clause paragraphs */
+.section > p {
+  max-width: 68ch;
+}
+
+.section > p + p {
+  margin-top: 1.1rem;
+}
