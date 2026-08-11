@@ -13,6 +13,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Terms of Service",
+  alternates: { canonical: "/terms" },
   description:
     "Terms governing access to the Traceremove AI Responsibility Laboratory, its public research archive and its private assessment workspace.",
 };
