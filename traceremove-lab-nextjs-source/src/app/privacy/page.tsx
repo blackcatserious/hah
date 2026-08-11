@@ -13,6 +13,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
+  alternates: { canonical: "/privacy" },
   description:
     "How the Traceremove AI Responsibility Laboratory collects, processes, stores and deletes personal data, and the rights you hold over it.",
 };
