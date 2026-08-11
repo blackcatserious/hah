@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-export const metadata = { title: "Contact" };
+export const metadata = {
+  alternates: { canonical: "/contact" }, title: "Contact" };
 
 export default function ContactPage() {
   return (
