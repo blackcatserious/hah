@@ -2,6 +2,10 @@ import Link from "next/link";
 import { programmes, publications } from "@/lib/research-data";
 import { ResearchConstellation } from "@/components/home/research-constellation";
 
+export const metadata = {
+  alternates: { canonical: "/" },
+};
+
 const assessmentModules = [
   ["01", "Epistemic risk", "Tests what the system claims, what evidence supports it, and where confidence exceeds warrant."],
   ["02", "Responsibility architecture", "Locates control, oversight, explanation duties, and the capacity to repair harm."],
