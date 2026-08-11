@@ -2,7 +2,8 @@ import { createClient } from "@/lib/supabase/server";
 import { publications as fallbackPublications, type Publication } from "@/lib/research-data";
 import { PublicationArchive } from "@/components/publications/publication-archive";
 
-export const metadata = { title: "Research archive" };
+export const metadata = {
+  alternates: { canonical: "/publications" }, title: "Research archive" };
 export const revalidate = 60;
 
 async function getPublications(): Promise<Publication[]> {
