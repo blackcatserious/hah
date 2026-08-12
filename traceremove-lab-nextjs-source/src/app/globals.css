@@ -766,3 +766,12 @@ td a { color: var(--text); text-decoration: none; }
 .section > p + p {
   margin-top: 1.1rem;
 }
+
+
+.record-links {
+  margin-top: 1.6rem;
+}
+
+.record-citation {
+  word-break: break-word;
+}
