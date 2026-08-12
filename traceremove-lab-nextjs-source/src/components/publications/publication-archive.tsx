@@ -43,7 +43,19 @@ export function PublicationArchive({ items }: { items: Publication[] }) {
           <article key={item.id || item.slug} className="publication-record">
             <div className="publication-record-no">{String(index + 1).padStart(2, "0")}</div>
             <div className="publication-record-main">
-              <div className="publication-record-meta"><span>{item.year}</span><span>{item.statusLabel}</span><span>{item.kind.replaceAll("_", " ")}</span></div>
+              <div className="publication-record-meta">
+                {[item.year, item.statusLabel, item.kind.replaceAll("_", " ")]
+                  .filter(
+                    (value, index, all) =>
+                      Boolean(value) &&
+                      all.findIndex(
+                        (other) => String(other).toLowerCase() === String(value).toLowerCase(),
+                      ) === index,
+                  )
+                  .map((value) => (
+                    <span key={String(value)}>{value}</span>
+                  ))}
+              </div>
               <h2>{item.title}</h2>
               <p>{item.abstract}</p>
               <div className="keyword-row">{item.keywords.map((keyword) => <span key={keyword}>{keyword}</span>)}</div>
