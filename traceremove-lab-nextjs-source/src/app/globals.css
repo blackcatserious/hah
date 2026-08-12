@@ -775,3 +775,7 @@ td a { color: var(--text); text-decoration: none; }
 .record-citation {
   word-break: break-word;
 }
+
+.section p + .overline {
+  margin-top: 1.9rem;
+}
