@@ -15,9 +15,9 @@
   --acid: #c7ff67;
   --danger: #ff8f98;
   --success: #89e8bd;
-  --serif: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
-  --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --serif: var(--font-serif), "Iowan Old Style", "Baskerville", "Times New Roman", serif;
+  --sans: var(--font-sans), Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: var(--font-mono), "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   --radius: 20px;
 }
 
@@ -778,4 +778,89 @@ td a { color: var(--text); text-decoration: none; }
 
 .section p + .overline {
   margin-top: 1.9rem;
+}
+
+/* ==========================================================================
+   Cross-platform fixes: mobile Safari / Android / tablets / touch input
+   ========================================================================== */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* Long unbreakable tokens (e-mail, URL) must not widen the page on 320px screens */
+.contact-grid > *,
+.contact-primary,
+.contact-routes,
+.contact-routes article { min-width: 0; }
+
+.contact-email {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  font-size: clamp(1.05rem, 5.6vw, 1.45rem);
+}
+
+@media (max-width: 400px) {
+  .contact-primary { padding: clamp(20px, 5vw, 74px); }
+}
+
+/* Tablet / phone: cards must not keep a desktop min-height */
+@media (max-width: 1000px) {
+  .price-card { min-height: auto; }
+}
+
+/* Mobile header: keep the workspace CTA reachable */
+@media (max-width: 680px) {
+  .brand-sub { display: none; }
+  .header-actions { display: flex; }
+  .nav-cta { padding: 9px 12px; font-size: 11px; white-space: nowrap; }
+}
+
+/* Touch targets: at least 44px on coarse pointers, without changing the layout */
+@media (pointer: coarse) {
+  .nav a::before,
+  .text-link::before {
+    content: "";
+    position: absolute;
+    inset: -15px -10px;
+  }
+  .text-link { position: relative; }
+  .archive-filters button,
+  .diagnostic-field button,
+  .lens-nav button,
+  .protocol-rail button,
+  .filter,
+  .nav-cta,
+  .button { min-height: 44px; }
+  .footer-links a { display: inline-block; padding: 7px 0; }
+  .constellation-node { padding: 12px; margin: -12px; }
+}
+
+/* iOS/Android: the address bar must not cut full-height layouts */
+@supports (height: 100dvh) {
+  body { min-height: 100dvh; }
+  .dashboard-page-root,
+  .dashboard-shell { min-height: 100dvh; }
+  .dashboard-layout { min-height: calc(100dvh - 77px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
