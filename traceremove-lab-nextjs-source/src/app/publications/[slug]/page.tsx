@@ -23,7 +23,10 @@ async function getPublication(slug: string): Promise<Publication | null> {
       .eq("slug", slug)
       .eq("is_public", true)
       .maybeSingle();
-    if (!error && data) {
+    if (error) {
+      return fallbackPublications.find((item) => item.slug === slug) ?? null;
+    }
+    if (data) {
       return {
         id: data.id,
         title: data.title,
@@ -37,6 +40,7 @@ async function getPublication(slug: string): Promise<Publication | null> {
         pdfUrl: data.pdf_url,
       };
     }
+    return null;
   }
   return fallbackPublications.find((item) => item.slug === slug) ?? null;
 }
