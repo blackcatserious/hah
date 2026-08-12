@@ -1,33 +1,52 @@
 import type { MetadataRoute } from "next";
-
+import { createClient } from "@/lib/supabase/server";
+import { publications as fallbackPublications } from "@/lib/research-data";
 import { siteUrl } from "@/lib/env";
 
-type Entry = {
-  path: string;
-  changeFrequency: "daily" | "weekly" | "monthly" | "yearly";
-  priority: number;
-};
+type ChangeFrequency = MetadataRoute.Sitemap[number]["changeFrequency"];
 
-const entries: Entry[] = [
+const routes: Array<{ path: string; changeFrequency: ChangeFrequency; priority: number }> = [
   { path: "/", changeFrequency: "weekly", priority: 1 },
-  { path: "/research", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/research", changeFrequency: "monthly", priority: 0.9 },
   { path: "/publications", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/lab", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/pricing", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/about", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/contact", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/pricing", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/lab", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/about", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/contact", changeFrequency: "yearly", priority: 0.5 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/refund", changeFrequency: "yearly", priority: 0.3 },
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+async function getPublicationSlugs(): Promise<string[]> {
+  const supabase = await createClient();
+  if (supabase) {
+    const { data, error } = await supabase
+      .from("publications")
+      .select("slug")
+      .eq("is_public", true);
+    if (!error && data?.length) {
+      return data.map((item) => String(item.slug)).filter(Boolean);
+    }
+  }
+  return fallbackPublications.map((item) => item.slug);
+}
 
-  return entries.map((entry) => ({
-    url: new URL(entry.path, siteUrl).toString(),
-    lastModified,
-    changeFrequency: entry.changeFrequency,
-    priority: entry.priority,
-  }));
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const lastModified = new Date();
+  const slugs = await getPublicationSlugs();
+  return [
+    ...routes.map((route) => ({
+      url: siteUrl + route.path,
+      lastModified,
+      changeFrequency: route.changeFrequency,
+      priority: route.priority,
+    })),
+    ...slugs.map((slug) => ({
+      url: siteUrl + "/publications/" + slug,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+  ];
 }
