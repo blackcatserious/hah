@@ -82,6 +82,7 @@ export default async function PublicationRecordPage({
   if (!record) {
     notFound();
   }
+  const kindLabel = kindLabels[record.kind] ?? "Archive record";
   const canonical = siteUrl + "/publications/" + record.slug;
   const jsonLd = {
     "@context": "https://schema.org",
@@ -106,9 +107,9 @@ export default async function PublicationRecordPage({
       />
       <section className="hero record-hero">
         <div className="hero-index">
-          <span>{kindLabels[record.kind] ?? "Archive record"}</span>
+          <span>{kindLabel}</span>
           <span>{record.year}</span>
-          <span>{record.statusLabel}</span>
+          <span>{record.statusLabel === kindLabel ? "Archive record" : record.statusLabel}</span>
         </div>
         <h1>{record.title}</h1>
       </section>
@@ -141,7 +142,7 @@ export default async function PublicationRecordPage({
       <section className="section panel">
         <div className="overline">Status of this record</div>
         <p>
-          This entry is labelled {record.statusLabel.toLowerCase()}. The archive states the stage of an
+          This record is filed as {kindLabel.toLowerCase()} and carries the status &ldquo;{record.statusLabel}&rdquo;. The archive states the stage of an
           argument instead of presenting drafts as settled results, so a reader can judge how much weight
           the text is meant to carry.
         </p>
