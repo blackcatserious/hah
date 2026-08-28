@@ -26,10 +26,32 @@ export const metadata: Metadata = {
   },
 };
 
+const personStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Artur Ziganshin",
+  url: siteUrl + "/about",
+  jobTitle: "Philosopher of Artificial Intelligence",
+  description:
+    "Independent philosopher and AI researcher working on narrative identity, machine testimony, contestability, dignity, and institutional responsibility.",
+  sameAs: [
+    "https://orcid.org/0009-0003-8406-9303",
+    "https://philpeople.org/profiles/artur-ziganshin",
+    "https://independent.academia.edu/ArturZiganshin",
+    "https://philarchive.org/s/Artur%20Ziganshin",
+  ],
+};
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body><SiteChrome>{children}</SiteChrome></body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personStructuredData) }}
+        />
+        <SiteChrome>{children}</SiteChrome>
+      </body>
     </html>
   );
 }
