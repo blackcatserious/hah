@@ -38,7 +38,6 @@ const personStructuredData = {
     "https://orcid.org/0009-0003-8406-9303",
     "https://philpeople.org/profiles/artur-ziganshin",
     "https://independent.academia.edu/ArturZiganshin",
-    "https://philarchive.org/s/Artur%20Ziganshin",
   ],
 };
 
