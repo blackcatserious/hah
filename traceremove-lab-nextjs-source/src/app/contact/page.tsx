@@ -1,7 +1,11 @@
 import Link from "next/link";
+import InstitutionalEnquiryForm from "@/components/contact/institutional-enquiry-form";
 
 export const metadata = {
-  alternates: { canonical: "/contact" }, title: "Contact" };
+  alternates: { canonical: "/contact" },
+  title: "Institutional AI assessment enquiry",
+  description: "Request an independent AI responsibility assessment, system review, or executive workshop directly from Traceremove.",
+};
 
 export default function ContactPage() {
   return (
@@ -14,12 +18,17 @@ export default function ContactPage() {
 
       <section className="section contact-grid">
         <div className="contact-primary panel">
-          <span className="overline">Direct correspondence</span>
+          <span className="overline">Direct institutional intake</span>
           <h2>Describe the system and what is at stake.</h2>
-          <p>For an institutional enquiry, include the system’s purpose, decision context, affected people, available documentation, deployment stage, and the review or governance problem that needs to be addressed.</p>
-          <a className="contact-email" href="mailto:support@traceremove.com?subject=AI%20Responsibility%20Laboratory%20Enquiry">support@traceremove.com <span>↗</span></a>
-          <small>Use the subject line “AI Responsibility Laboratory”.</small>
+          <p>Give us enough context to judge fit and scope: the system’s purpose, decision context, affected people, deployment stage, and the responsibility or governance problem that needs review.</p>
+          <InstitutionalEnquiryForm />
+          <div className="notice">
+            Prefer email? Write to{" "}
+            <a href="mailto:support@traceremove.com?subject=AI%20Responsibility%20Laboratory%20Enquiry">support@traceremove.com</a>{" "}
+            with the subject “AI Responsibility Laboratory”.
+          </div>
         </div>
+
         <div className="contact-routes">
           <article><span>01</span><div><h3>Research correspondence</h3><p>Discussion of papers, concepts, doctoral research, publications, and academic collaboration.</p></div></article>
           <article><span>02</span><div><h3>Institutional assessment</h3><p>Independent analysis of an AI system, evidence base, responsibility architecture, and contestability.</p></div></article>

@@ -30,7 +30,7 @@ const processors: Processor[] = [
   },
   {
     name: "Netlify",
-    purpose: "Website hosting, server-side rendering and content delivery",
+    purpose: "Website hosting, server-side rendering, content delivery and institutional enquiry form storage",
     location: "United States, with edge delivery worldwide",
   },
   {
@@ -58,6 +58,7 @@ const clauses: Clause[] = [
     title: "What we collect",
     body: [
       "Account data: your email address, the role assigned to your account, the time you signed in, and your subscription status.",
+      "Institutional enquiry data: your name, work email, organisation, engagement type, system purpose, decision context, affected groups, deployment stage, and any deadline you choose to provide.",
       "Workspace content: the projects you create, the documents and evidence you upload, the notes you write, and the assessments and reports generated from them. This can contain personal data if you choose to upload it.",
       "Technical data: request logs, IP address, browser type and error traces produced by our hosting and database providers, kept for security and debugging.",
       "Billing data: your name, billing country, tax identifiers and payment history. This is collected and held by our merchant of record, not by us. We see the invoice record and subscription status, never your full card number.",
@@ -68,6 +69,7 @@ const clauses: Clause[] = [
     title: "Why we process it and on what basis",
     body: [
       "To provide the service you asked for, including running assessments and storing your evidence. Legal basis: performance of a contract.",
+      "To evaluate and reply to an institutional or research enquiry. Legal basis: steps at your request before entering a contract, or our legitimate interest in handling research correspondence.",
       "To keep the platform secure, prevent abuse and debug failures. Legal basis: our legitimate interest in a functioning and safe service.",
       "To take payment and meet tax and accounting obligations. Legal basis: contract and legal obligation.",
       "To send you service messages such as sign-in links, billing notices and material changes to these policies. Legal basis: contract.",
@@ -94,6 +96,7 @@ const clauses: Clause[] = [
     title: "How long we keep data",
     body: [
       "Workspace content is kept until you delete it or until 30 days after your account is closed.",
+      "Institutional enquiries are kept while they are active and for as long as reasonably needed for follow-up, safeguarding and business records.",
       "Account records are kept while your account is active and for 12 months afterwards, so that we can answer questions about past work.",
       "Invoices and tax records are kept for the period required by tax law, which is normally between six and ten years depending on jurisdiction.",
       "Technical logs are kept for a short retention window, normally no more than 90 days.",
