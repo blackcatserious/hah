@@ -12,10 +12,11 @@ export function SiteFooter() {
           <div><span>Research</span><Link href="/research">Programme</Link><Link href="/publications">Archive</Link><Link href="/lab">Laboratory</Link></div>
           <div><span>Platform</span><Link href="/dashboard">Workspace</Link><Link href="/pricing">Access</Link><Link href="/contact">Institutional audit</Link></div>
           <div><span>Legal</span><Link href="/terms">Terms of Service</Link><Link href="/privacy">Privacy Policy</Link><Link href="/refund">Refund Policy</Link></div>
+          <div><span>Traceremove products</span><a href="https://traceremove.com/">Removal .com</a><a href="https://traceremove.io/">Scan .io</a><a href="https://traceremove.net/">Exposure .net</a><a href="https://traceremove.expert/">AI workspace .expert</a></div>
         </div>
       </div>
       <div className="footer-secondary">
-        <span>&copy; 2026 Artur Ziganshin</span>
+        <span>&copy; 2026 Artur Ziganshin · Traceremove Research</span>
         <span>Philosophy of AI &middot; epistemology &middot; dignity &middot; contestability</span>
       </div>
     </footer>
