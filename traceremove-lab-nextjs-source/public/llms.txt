@@ -1,0 +1,43 @@
+# Traceremove Research — AI Responsibility Laboratory
+
+> Independent research and applied assessment on AI responsibility, narrative identity, epistemic risk, dignity, contestability, and institutional accountability. Founded by philosopher and AI researcher Artur Ziganshin.
+
+## Canonical pages
+
+- Laboratory home: https://traceremove.dev/
+- Research programme: https://traceremove.dev/research
+- Publication archive: https://traceremove.dev/publications
+- Applied laboratory: https://traceremove.dev/lab
+- Institutional assessment enquiry: https://traceremove.dev/contact
+- About Artur Ziganshin: https://traceremove.dev/about
+- Access and pricing: https://traceremove.dev/pricing
+- Privacy: https://traceremove.dev/privacy
+- Terms: https://traceremove.dev/terms
+
+## Research focus
+
+- Narrative identity and algorithmic description.
+- Machine testimony and epistemic authority.
+- Responsibility allocation across AI providers, deployers, operators, and institutions.
+- Dignity, explanation, contestability, refusal, appeal, and remedy.
+- Independent review of consequential AI deployments.
+
+## Boundaries
+
+- The laboratory does not issue regulatory certification or accreditation.
+- Generated assessments can contain errors and require competent human review.
+- Research and assessment output is not legal advice.
+- Public research pages and the private assessment workspace have different access and data-handling boundaries.
+
+## Entity references
+
+- Researcher ORCID: https://orcid.org/0009-0003-8406-9303
+- Researcher PhilPeople profile: https://philpeople.org/profiles/artur-ziganshin
+- Parent Traceremove product family: https://traceremove.com/
+
+## Related Traceremove products
+
+- Content removal and reputation operations: https://traceremove.com/
+- Harmful-page triage and audit discovery: https://traceremove.io/
+- Private digital exposure operations: https://traceremove.net/
+- Governed multi-model AI workspace: https://traceremove.expert/

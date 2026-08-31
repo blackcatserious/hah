@@ -33,7 +33,7 @@ async function getPublicationSlugs(): Promise<string[]> {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const lastModified = new Date();
+  const lastModified = new Date("2026-08-31T00:00:00.000Z");
   const slugs = await getPublicationSlugs();
   return [
     ...routes.map((route) => ({
