@@ -8,6 +8,7 @@ const links = [
   ["Archive", "/publications"],
   ["Laboratory", "/lab"],
   ["About", "/about"],
+  ["Work with Artur", "/work"],
 ] as const;
 
 export function SiteHeader() {
