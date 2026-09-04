@@ -92,7 +92,8 @@ export default function WorkPage() {
     </section>
     <section className={styles.privacy} id="enquiry-privacy" aria-labelledby="privacy-heading">
       <h2 id="privacy-heading">About your enquiry</h2>
-      <p>Artur Ziganshin uses the contact and workflow information you provide to assess and respond to this enquiry. Website submissions are processed and stored through Netlify Forms in the site owner’s account. They do not subscribe you to a newsletter. To request access, correction or deletion, contact <a href="mailto:artur@traceremove.com">artur@traceremove.com</a>. Further information is in the <Link href="/privacy">Privacy Policy</Link>.</p>
+      <p>Artur Ziganshin uses the contact and workflow information you provide to assess and respond to this enquiry. Submissions also include this page’s path and any campaign labels in its link, so the source of an enquiry can be understood. Website submissions are processed and stored through Netlify Forms in the site owner’s account. They do not subscribe you to a newsletter.</p>
+      <p>Enquiries are retained while active and for as long as reasonably needed for follow-up and business records. To request access, correction or deletion, contact <a href="mailto:artur@traceremove.com">artur@traceremove.com</a>. Further information is in the <Link href="/privacy">Privacy Policy</Link>.</p>
     </section>
   </div>;
 }
