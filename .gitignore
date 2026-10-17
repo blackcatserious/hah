@@ -1,3 +1,5 @@
 traceremove-lab-nextjs-source/.next/
 traceremove-lab-nextjs-source/node_modules/
 traceremove-lab-nextjs-source/tsconfig.tsbuildinfo
+traceremove-lab-nextjs-source/.env*
+!traceremove-lab-nextjs-source/.env.example
