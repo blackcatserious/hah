@@ -1,9 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 import { DashboardSidebar } from "@/components/dashboard/sidebar";
+import { privatePageMetadata } from "@/lib/private-page-metadata";
 import { signOutAction } from "./actions";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = privatePageMetadata;
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient();
