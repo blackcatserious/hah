@@ -1,4 +1,7 @@
-export const metadata = { title: "Platform setup" };
+import type { Metadata } from "next";
+import { privatePageMetadata } from "@/lib/private-page-metadata";
+
+export const metadata: Metadata = { title: "Platform setup", ...privatePageMetadata };
 
 export default function SetupPage() {
   return (

@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
 import { LoginForm } from "@/components/auth/login-form";
+import { privatePageMetadata } from "@/lib/private-page-metadata";
 
-export const metadata = { title: "Sign in" };
+export const metadata: Metadata = { title: "Sign in", ...privatePageMetadata };
 
 export default async function LoginPage({ searchParams }: { searchParams: Promise<{ next?: string }> }) {
   const params = await searchParams;
